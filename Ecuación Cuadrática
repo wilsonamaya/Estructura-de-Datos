@@ -1,0 +1,57 @@
+#include <iostream>
+#include "math.h"
+
+using namespace std;
+
+int main()
+{
+    float a,b,c,D,x1,x2,Dimg;
+    
+    do{
+    
+    cout<<"Ingrese a: ";
+    cin>>a;
+    
+    if(a==0)
+    cout<<"a no puede ser 0"<<endl;
+    
+    }while(a==0);
+    
+    cout<<"Ingrese b: ";
+    cin>>b;
+    cout<<"Ingrese c: ";
+    cin>>c;
+    
+    D=sqrt(b*b-4*a*c);
+    
+    if(D>0)
+    {
+        x1= (-b-D)/2*a;
+        x2= (-b+D)/2*a;
+        
+        cout<<"x1 es: "<<x1<<endl;
+        cout<<"x2 es: "<<x2<<endl;
+    }
+    else
+    if(D==0)
+    {
+        cout<<"La ecuacion tiene una unica solucion "<<endl;
+        cout<<"La solucion es: "<<x1;
+    }
+    else
+    if(D<0)
+    {
+        cout<<"La ecuacion tiene soluciones imaginarias"<<endl;
+        D=D*(-1);
+        
+        x1= -D/2*a;
+        x2= D/2*a;
+        
+        cout<<"x1 es: "<<-b/(2*a)<<x1<<"i"<<endl;
+        cout<<"x2 es: "<<-b/(2*a)<<x2<<"i"<<endl;
+    }
+    
+    
+    
+    return 0;
+}
