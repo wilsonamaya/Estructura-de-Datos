@@ -1,0 +1,88 @@
+#include <iostream>
+
+using namespace std;
+
+void menu();
+void producto(int op);
+void division(int op);
+void suma(int op);
+
+int main()
+{
+    int op;
+    
+    do{
+    
+    cout<<"-----Menu-----"<<endl;
+    cout<<"1.Producto"<<endl;
+    cout<<"2.Division"<<endl;
+    cout<<"3.Suma"<<endl;
+    cout<<"0.Salir"<<endl;
+    cout<<"Elija una opcion: "<<endl;
+    cin>>op;
+    
+    
+    switch(op)
+    {
+        case 1: producto(op);
+            break;
+        case 2: division(op);
+            break;
+        case 3: suma(op);
+            break;
+        case 0: cout<<"Cerrando programa...";
+            break;
+        default: cout<<"Opcion no valida, intente de nuevo";
+            break;
+    }
+    
+    }while(op!=0);
+    
+    return 0;
+}
+
+void menu()
+{
+    
+}
+
+void producto(int op)
+{
+    int a, b, r;
+    
+    cout<<"Digite un numero: ";
+    cin>>a;
+    cout<<"Digite otro numero: ";
+    cin>>b;
+    
+    r=a*b;
+    
+    cout<<"Su resultado es: "<<r<<endl;
+}
+
+void division(int op)
+{
+   float a, b, r;
+    
+    cout<<"Digite un numero: ";
+    cin>>a;
+    cout<<"Digite otro numero: ";
+    cin>>b;
+    
+    r=a/b;
+    
+    cout<<"Su resultado es: "<<r<<endl; 
+}
+void suma(int op)
+{
+    int a, b, r;
+    
+    cout<<"Digite un numero: ";
+    cin>>a;
+    cout<<"Digite otro numero: ";
+    cin>>b;
+    
+    r=a+b;
+    
+    cout<<"Su resultado es: "<<r<<endl;
+}
