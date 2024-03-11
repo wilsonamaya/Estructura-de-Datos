@@ -1,0 +1,81 @@
+#include <iostream>
+
+using namespace std;
+
+class Array2 {
+private:
+    int n;
+public:
+    Array2(int n) {
+        this->n = n;
+    }
+
+    void cargarArray(int X[]);
+    void mostrarArray(int X[]);
+    void MostrarSumaArrays(int X[], int Y[]);
+    int mayor(int A[]);
+    int menor(int A[]);
+    string MostrarQueArrayEsMayor(int A[], int B[]);
+
+};
+int Array2::mayor(int A[]) {
+    int mayor = 0;
+    for (int i = 0; i < n; i++) {
+        mayor = A[i];
+    }
+    return mayor;
+}
+int menor(int A[]) {
+    int menor = 0;
+    for (int i = 0; i < n; i++) {
+        menor = A[i];
+    }
+}
+
+void Array2::cargarArray(int X[]) {
+    for (int i = 0; i < n; i++) {
+        cout << "Valor para Z[" << i << "]:";
+        cin >> X[i];
+    }
+
+}
+
+void Array2::mostrarArray(int Y[]) {
+    for (int i = 0; i < n; i++) {
+        cout << Y[i] << " ";
+    }
+}
+
+void Array2::MostrarSumaArrays(int X[], int Y[]) {
+    for (int i = 0; i < n; i++) {
+        cout << X[i] + Y[i] << " ";
+    }
+}
+
+using namespace std;
+
+int main()
+{
+    int A[5]; int B[5];
+    Array2 array2(5);
+
+    cout << "Cargando el vector A..."<<endl;
+    array2.cargarArray(A);
+    cout << endl;
+
+    cout << "Cargando el vector B..." << endl;
+    array2.cargarArray(B);
+    cout << endl;
+
+    cout << "Mostrando el vector A..." << endl;
+    array2.cargarArray(A);
+    cout << endl;
+
+    cout << "Mostrando el vector B..." << endl;
+    array2.cargarArray(B);
+    cout << endl;
+
+    cout << "Mostrando la suma del Vector A y Vector B..." << endl;
+    array2.MostrarSumaArrays(A, B);
+
+}
