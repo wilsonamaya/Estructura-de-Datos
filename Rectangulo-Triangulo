@@ -1,0 +1,87 @@
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+class Shape {
+protected:
+      int width;
+      int height;   
+public:
+      void setWidth(int w);
+      void setHeight(int h);
+};
+
+ void Shape::setWidth(int w) {
+         width = w;
+      }
+ void Shape::setHeight(int h) {
+         height = h;
+      }
+
+
+class Rectangulo: public Shape {
+public:
+	Rectangulo(void);
+	~Rectangulo(void);
+	 int getArea() { 
+         return (width * height); 
+      }
+};
+
+Rectangulo::Rectangulo(void)
+{
+}
+
+
+Rectangulo::~Rectangulo(void)
+{
+}
+
+class Triangulo: public Shape {
+    public:
+    Triangulo();
+    ~Triangulo();
+    int get_Area(){
+        return (width*height)/2;
+    }
+
+};
+
+Triangulo::Triangulo()
+{
+}
+Triangulo::~Triangulo()
+{
+}
+
+
+int main(void) {
+    
+   Rectangulo rec[10];
+   Rectangulo Rect, rectangulito;
+   Triangulo Tri;
+   
+   for(int i=0;i<10;i++)
+   {
+       int b,h;
+       cout<<"Ingrese la base: "<< endl;
+       cin>>b;
+        rec[i].setWidth(b);
+        cout<<"Ingrese la altura: "<<endl;
+        cin>>h;
+        rec[i].setHeight(h);
+   
+   }
+   Tri.setWidth(5);
+   Tri.setHeight(7);
+ 
+   Rect.setWidth(5);
+   Rect.setHeight(7);
+
+   // Muestra el área de un rectangulo y el triangulo 
+   cout << "Total area: " << Rect.getArea() << endl;
+   cout << "Total area: " << Tri.get_Area() << endl;
+   getch();
+   return 0;
+}
